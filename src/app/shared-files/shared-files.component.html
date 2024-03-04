@@ -1,0 +1,9 @@
+<section class="section dashboard shared-files">
+    <app-upload-file 
+      [uploadProgress]="percentDone"
+      (filesChangeEmiter)="onFileChange($event)"></app-upload-file>
+
+    <app-file-table
+      [fileData]="folderData"
+    ></app-file-table>
+  </section>

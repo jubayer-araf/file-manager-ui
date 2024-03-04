@@ -1,0 +1,69 @@
+<div class="file-section">
+    <div class="file-table">
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col"></th>
+            <th scope="col">Name</th>
+            <th scope="col">Modified By</th>
+            <th scope="col">Modified Date</th>
+            <th scope="col">File Size</th>
+            <th scope="col" class="item-end">
+              <i class="bi bi-three-dots-vertical"></i>
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let folder of _fileData.childFolders; index as i;">
+            <td><i class="bi bi-folder icon-blue"></i></td>
+            <td class="table-row" [routerLink]="['', folder.id]" (click)="folderSelect(folder.id)">{{folder.name}}</td>
+            <td>{{folder.lastUpdatedByUserId}}</td>
+            <td>{{folder.updatedDate}}</td>
+            <td>{{folder.size}}</td>
+            <td class="item-end">
+              <div class="dropdown show">
+                <a class="" href="javascript.void(0);" data-bs-toggle="dropdown">
+                  <i class="bi bi-three-dots-vertical"></i>
+                </a>
+                <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+                  <a class="dropdown-item" [routerLink]="['', folder.id]" (click)="folderSelect(folder.id)">Show information</a>
+                  <a class="dropdown-item" href="javascript:void(0)" (click)="downlaodFolder(folder.id, folder.name)">Download</a>
+                  <a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#exampleModal" (click)="renameFile(folder)">Edit</a>
+                </ul>
+
+              </div>
+            </td>
+          </tr>
+          <tr  *ngFor="let fileItem of _fileData.fileItems; index as i;">
+            <td class="list-icon">    
+              <div class="upload-icon-wrapper">
+              <div class="upload-card-style">
+                <div class="upload-card-top"></div>
+              </div>
+              <div class="upload-icon">
+                {{fileItem.extension}}
+              </div>
+            </div>
+          </td>
+            <td class="table-row">{{fileItem.name}}</td>
+            <td>{{fileItem.lastUpdatedByUserId}}</td>
+            <td>{{fileItem.updatedDate | date: 'dd-MM-yyyy hh:mm a'}}</td>
+            <td>{{fileItem.size}}</td>
+            <td class="item-end">
+              <div class="dropdown show">
+                <a class="" href="javascript.void(0);" data-bs-toggle="dropdown">
+                  <i class="bi bi-three-dots-vertical"></i>
+                </a>
+                <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+                  <a class="dropdown-item" (click)="fileSelect(fileItem.id)">Show information</a>
+                  <a class="dropdown-item" href="javascript:void(0)" (click)="downlaodFile(fileItem.id, fileItem.name)">Download</a>
+                  <a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#exampleModal" (click)="renameFile(fileItem)">Edit</a>
+                </ul>
+
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>

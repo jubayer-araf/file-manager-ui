@@ -1,0 +1,128 @@
+ /*--------------------------------------------------------------
+  # Folder Card
+  --------------------------------------------------------------*/
+  /* Filter dropdown */
+  
+  .folder-card{
+    margin: 20px;
+    background-color: var(--white);
+    border: 2px solid var(--broder);
+    border-radius: 15px;
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--text);
+    padding: 25px 25px 10px 25px;
+    cursor: pointer;
+    transition: 0.5s;
+  }
+  
+  .folder-card:hover{
+    color: var(--white);
+    background-color: #007fff;
+  }
+  .folder-card:active{
+    color: var(--white);
+    background-color: #007fff;
+  }
+  
+  .folder-card i{
+    font-size: 24px;
+  }
+  
+  .folder-card .folder-card-title{
+    margin-top: 10px;
+  }
+  
+  
+  .recent-section{
+    margin: 20px;
+    border: 2px var(--broder) solid;
+    border-radius: 15px;
+    background-color: var(--white);
+    padding: 25px 25px 25px 25px;
+    transition: 0.5s;
+  }
+  
+  .recent-section .recent-title{
+    justify-content: space-between;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+  }
+  
+  .recent-card-blue .recent-card-top{
+    background-color: #0173e5;
+  }
+  .recent-card-blue .recent-card{
+    background-color: var(--blue);
+  }
+  
+  .recent-card-orange .recent-card-top{
+    background-color: #e34c00;
+  }
+  
+  .recent-card-orange .recent-card{
+    background-color: var(--orange);
+  }
+  
+  .recent-card-yellow .recent-card-top{
+    background-color: #dd9d26;
+  }
+  
+  .recent-card-yellow .recent-card{
+    background-color: var(--yellow);
+  }
+  
+  .recent-card-purple .recent-card-top{
+    background-color: #a11edf;
+  }
+  
+  .recent-card-purple .recent-card{
+    background-color: var(--purple);
+  }
+  
+  .recent-card-sky .recent-card-top{
+    background-color: #59acdb;
+  }
+  
+  .recent-card-sky .recent-card{
+    background-color: var(--sky);
+  }
+  
+  .recent-card-style{
+    justify-content: end;
+    display: flex;
+    flex-direction: row;
+    align-items: end;
+  }
+  
+  .recent-card-style .recent-card-top{
+    height: 30px;
+    width: 130px;
+    clip-path: polygon(35% 0, 0 100%, 100% 100%, 100% 100%, 100% 0);
+    border-top-right-radius: 15px;
+  }
+  
+  .recent-card{
+    color: #fff;
+    font-size: 14px;
+    padding: 10px;
+    border-radius: 15px 0px 15px 15px;
+    cursor: pointer;
+  }
+  
+  .recent-card .recent-card-title{
+    justify-content: space-between;
+    display: flex;
+    flex-direction: row;
+    min-width: 100px;
+    min-height: 100px;
+  }
+  
+  .recent-card .recent-card-info{
+    justify-content: space-between;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+  }
+  

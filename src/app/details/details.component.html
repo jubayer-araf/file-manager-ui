@@ -1,0 +1,96 @@
+<div class="details-section">
+
+    <div class="icon-place">
+        <div class="upload-icon-wrapper">
+            <div class="upload-card-style">
+                <div class="upload-card-top"></div>
+            </div>
+            <div class="upload-icon">
+                {{fileDetails.extension}}
+            </div>
+        </div>
+    </div>
+
+
+    <div class="row">
+        <div class="col-lg-5">
+            File Name :
+        </div>
+        <div class="col-lg-7">
+            {{fileDetails.name}}
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-5">
+            Owner:
+        </div>
+        <div class="col-lg-7">
+            {{"@"+fileDetails.ownerName}}
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-5">
+            File Size: 
+        </div>
+        <div class="col-lg-7">
+            {{fileDetails.sizeString}}
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-5">
+            Folder:
+        </div>
+        <div class="col-lg-7">
+            <a [routerLink]="['', fileDetails.folderId]">
+                {{fileDetails.folderName}}
+            </a>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-5">
+            Last Edited By: 
+        </div>
+        <div class="col-lg-7">
+            {{fileDetails.lastUpdatedBy}}
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-5">
+            Last Edited Date:
+        </div>
+        <div class="col-lg-7">
+            {{fileDetails.updatedDate | date: 'dd-MM-yyyy hh:mm a'}}
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-5">
+            Created Date:
+        </div>
+        <div class="col-lg-7">
+            {{fileDetails.createdDate | date: 'dd-MM-yyyy hh:mm a'}}
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-5">
+            Shared With:
+        </div>
+        <div class="col-lg-7">
+            <div class="user-list">
+                <div *ngFor="let user of fileDetails.userGroupMapping.userGroupMappings" class="user-item">
+                    {{"@"+user.userName}}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-10">
+
+        </div>
+        <div class="col-lg-2">
+            <a (click)="downlaodFile(fileDetails.id, fileDetails.name)" href="javascript:void(o);">
+                <i class="bi bi-download download-icon"></i>
+            </a>
+        </div>
+    </div>
+</div>

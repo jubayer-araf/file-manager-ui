@@ -1,0 +1,125 @@
+  /*--------------------------------------------------------------
+  # File Section
+  --------------------------------------------------------------*/
+  
+  .file-section{
+    margin: 20px;
+    border: 2px var(--broder) solid;
+    border-radius: 15px;
+    background-color: var(--white);
+    padding: 25px 25px 25px 25px;
+    transition: 0.5s;
+  }
+  
+  .file-table{
+    font-size: 18px;
+  }
+
+  .file-table tbody tr{
+    font-size: 15px;
+    
+    .text-row{
+      text-decoration: underline;
+    }
+  }
+
+  
+  .file-table .table td{
+    border: none;
+    border-radius: 15px;
+    font-weight: 600;
+    color: var(--text);
+    padding-top: 12px;
+  }
+  
+  .file-table .table th{
+    color: var(--text);
+    padding-bottom: 15px;
+  }
+  
+  .file-table .table .icon-blue{
+    font-size: 25px;
+    color: var(--blue);
+  }
+  
+  .file-table .table .icon-orange{
+    font-size: 25px;
+    color: var(--orange);
+  }
+  
+  .file-table .table .icon-purple{
+    font-size: 25px;
+    color: var(--purple);
+  }
+  
+  .file-table .table .icon-yellow{
+    font-size: 25px;
+    color: var(--yellow);
+  }
+  
+  .file-table .table .item-end{
+    display: flex;
+    flex-direction: row;
+    align-items: end;
+    justify-content: end;
+  }
+  
+  .file-table .table .table-row{
+    border-radius: 15px;
+    cursor: pointer;
+  }
+  
+  .file-table .table .table-row :hover {
+    color: #0280ff;
+    background: #ddebfa;
+  }
+
+  .file-table .file-icon{
+    border: 1px solid var(--blue);
+    border-radius: 2px;
+    padding: 2px 1px 2px 1px;
+  }
+  
+
+  .list-icon .upload-card-style{
+    justify-content: end;
+    display: flex;
+    flex-direction: row;
+    align-items: end;
+    transition: 0.5s;
+  }
+  
+  
+  .list-icon .upload-card-style .upload-card-top{
+    background-color: #0173e5;
+    height: 5px;
+    width: 15px;
+    clip-path: polygon(35% 0, 0 100%, 100% 100%, 100% 100%, 100% 0);
+    border-top-right-radius: 5px;
+    transition: 0.5s;
+  }
+
+
+  .upload-card-inner{
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+  
+  .upload-icon-wrapper{
+    width: 30px;
+    height: 20px;
+  }
+  
+  .list-icon .upload-icon{
+    width: 30px;
+    height: 20px;
+    box-shadow: 0 5px 30px 0 rgba(82, 63, 105, 0.2);
+    background-color: var(--blue);
+    color: var(--white);
+    font-size: 10px;
+    text-align: center;
+    padding-top: 2px;
+    transition: 0.5s;
+  }

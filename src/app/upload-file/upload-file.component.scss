@@ -1,0 +1,120 @@
+.upload-card{
+    margin: 20px;
+    border: 2px var(--broder) dashed;
+    border-radius: 15px;
+    font-size: 22px;
+    font-weight: 600;
+    color: #979797;
+    padding: 25px 25px 10px 25px;
+    transition: 0.5s;
+    cursor: pointer;
+    transition: 0.5s;
+  }
+
+  .upload-card-drag{
+    border-color: var(--blue);
+  }
+  
+  .upload-card .upload-card-style{
+    justify-content: end;
+    display: flex;
+    flex-direction: row;
+    align-items: end;
+    transition: 0.5s;
+  }
+  
+  
+  .upload-card .upload-card-style .upload-card-top{
+    background-color: #dedede;
+    height: 15px;
+    width: 40px;
+    clip-path: polygon(35% 0, 0 100%, 100% 100%, 100% 100%, 100% 0);
+    border-top-right-radius: 5px;
+    transition: 0.5s;
+  }
+
+  .upload-card .upload-card-style .upload-card-top-drag{
+    background-color: #0173e5;
+  }
+
+  .upload-card-inner{
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+  
+  .upload-icon-wrapper{
+    width: 90px;
+    height: 55px;
+    margin-bottom: 20px;
+  }
+  
+  .upload-card .upload-icon{
+    width: 90px;
+    height: 55px;
+    box-shadow: 0 5px 30px 0 rgba(82, 63, 105, 0.2);
+    background-color: var(--white);
+    color: #979797;
+    font-size: 28px;
+    text-align: center;
+    padding-top: 3px;
+    margin-bottom: 10px;
+    transition: 0.5s;
+  }
+
+  .upload-card .upload-icon-drag{
+    background-color: var(--blue);
+    color: #fff;
+  }
+
+  .upload-text-drag{
+    color:  var(--blue);
+  }
+
+  .upload-card input[type="file"]{
+    display:none;
+  }
+
+.progress-container {
+  margin-top: 10px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); // Box shadow
+  padding: 10px; // Add padding as needed
+  background-color: var(--white);
+}
+
+
+.file-details {
+  display: flex;
+  align-items: center;
+  margin-bottom: 5px;
+
+  i {
+    margin-right: 5px;
+  }
+}
+
+.progress-bar {
+  background-color: #ddd;
+  border-radius: 5px;
+  overflow: hidden;
+  height: 7px;
+  margin-top: 20px;
+
+  .progress-bar-fill {
+    background-color: #1e90ff;
+    height: 100%;
+    transition: width 0.5s;
+  }
+}
+
+.cancel-upload {
+  cursor: pointer;
+  margin-top: 5px;
+
+  i {
+    font-size: 1.5rem;
+    color: red;
+  }
+  }

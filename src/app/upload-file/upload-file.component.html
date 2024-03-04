@@ -1,0 +1,28 @@
+<div [ngClass]="{'upload-card-drag': isDragging}" fileDragDrop (filesChangeEmiter)="onFileChange($event)" class="upload-card dropzone">
+  <div class="upload-card-inner" *ngIf="_uploadProgress === 0">
+    <input type="file" name="file" id="file" (change)="onFileChange($event.target)" multiple>
+    <div class="upload-icon-wrapper">
+      <div class="upload-card-style">
+        <div class="upload-card-top" [ngClass]="{'upload-card-top-drag': isDragging}"></div>
+      </div>
+      <div [ngClass]="{'upload-icon-drag': isDragging}" class="upload-icon">
+        <i class="bi bi-arrow-bar-up"></i>
+      </div>
+    </div>
+    <p [ngClass]="{'upload-text-drag': isDragging}" class="upload-text">Click or drag and drop your file here</p>
+  </div>
+
+  <!-- Progress bar and file details -->
+  <div  *ngIf="_uploadProgress >= 0 && files.length > 0" class="progress-container row">
+    <div class="file-details col-lg-5">
+      <i class="bi bi-file-earmark-text"></i>
+      {{ files[0]?.name }}
+    </div>
+    <div class="progress-bar col-lg-6">
+      <div class="progress-bar-fill" [style.width.%]="_uploadProgress"></div>
+    </div>
+    <div class="cancel-upload col-lg-1" (click)="cancelUpload()">
+      <i class="bi bi-x"></i>
+    </div>
+  </div>
+</div>

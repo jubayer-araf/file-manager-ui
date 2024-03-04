@@ -1,0 +1,72 @@
+.details-section{
+    margin: 20px;
+    border: 2px var(--broder) solid;
+    border-radius: 15px;
+    background-color: var(--white);
+    padding: 25px 25px 25px 25px;
+    transition: 0.5s;
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--text);
+  }
+
+  .details-section .row{
+    margin-bottom: 15px;
+  }
+
+  .details-section .icon-place{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 30px;
+  }
+
+  .details-section .upload-card-style{
+    justify-content: end;
+    display: flex;
+    flex-direction: row;
+    align-items: end;
+    transition: 0.5s;
+  }
+  
+  
+  .details-section .upload-card-style .upload-card-top{
+    background-color: #dedede;
+    height: 15px;
+    width: 45px;
+    clip-path: polygon(35% 0, 0 100%, 100% 100%, 100% 100%, 100% 0);
+    border-top-right-radius: 5px;
+    transition: 0.5s;
+  }
+
+
+
+  .upload-card-inner{
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+  
+  .upload-icon-wrapper{
+    width: 120px;
+    height: 75px;
+    margin-bottom: 20px;
+  }
+  
+  .details-section .upload-icon{
+    width: 120px;
+    height: 75px;
+    box-shadow: 0 5px 30px 0 rgba(82, 63, 105, 0.2);
+    background-color: var(--white);
+    color: #979797;
+    font-size: 30px;
+    text-align: center;
+    padding-top: 10px;
+    margin-bottom: 10px;
+    transition: 0.5s;
+  }
+
+  .details-section .download-icon{
+    color: var(--blue);
+  }

@@ -1,0 +1,15 @@
+.sidebar-right {
+    position: fixed;
+    top: 60px;
+    right: 0px;
+    bottom: 0;
+    width: 400px;
+    z-index: 996;
+    transition: all 0.5s;
+    padding: 50px 19px;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: #aab7cf transparent;
+    background-color: #f8f8f8;
+    border-left: 2px solid var(--broder);
+  }

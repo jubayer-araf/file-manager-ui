@@ -9,6 +9,7 @@ export class ScreenControlService {
 
   isDetailsShown: BehaviorSubject<boolean> = new BehaviorSubject(false);
   fileDetailsId: BehaviorSubject<string> = new BehaviorSubject("");
+  currentFolderId: BehaviorSubject<string> = new BehaviorSubject("");
   fileRename: BehaviorSubject<any> = new BehaviorSubject({});
 
 

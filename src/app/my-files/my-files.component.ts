@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { FileService } from '../services/file.service';
 import { ActivatedRoute, Params, Router } from '@angular/router';
 import { HttpEventType } from '@angular/common/http';
+import { ScreenControlService } from '../services/screen-control.service';
 
 @Component({
   selector: 'app-my-files',
@@ -14,7 +15,7 @@ export class MyFilesComponent {
   folderData : any | undefined;
   percentDone: number = 0;
 
-  constructor(private fileService: FileService, private route: ActivatedRoute){
+  constructor(private fileService: FileService, private route: ActivatedRoute, private screenControlService: ScreenControlService){
 
     
   }
@@ -31,6 +32,7 @@ export class MyFilesComponent {
     const id = this.route.snapshot.paramMap.get('id');
     if (id) {
       this.param = id;
+      this.screenControlService.currentFolderId.next(id);
       this.fileService.getFolderDetails(id).subscribe(res=>{
         this.folderData = res;
       });

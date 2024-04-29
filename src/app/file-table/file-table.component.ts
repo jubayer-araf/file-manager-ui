@@ -12,7 +12,7 @@ export class FileTableComponent {
  _fileData: any = {
   "childFolders" : [],
   "fileItems": []
- };
+  };
   get fileData(): any {
     return this._fileData;
   }
@@ -23,6 +23,7 @@ export class FileTableComponent {
 
   @Output() folderId = new EventEmitter<string>();
   folderSelect(id: string) {
+    this.screenControlService.currentFolderId.next(id);
     this.folderId.emit(id);
   }
 
@@ -85,6 +86,35 @@ export class FileTableComponent {
 
   renameFile(file : any){
     this.screenControlService.fileRename.next(file);
+  }
+
+  addFolder(){
+    this.screenControlService.fileRename.next({
+      
+    });
+  }
+
+  removeFolder(id: string){
+    if(id){
+      this.fileService.deleteFolder(id).subscribe(res=>{
+        console.log(res);
+        this.screenControlService.currentFolderId.subscribe(folderId=>{
+          this.folderId.emit(folderId);
+        })
+
+      })
+    }
+  }
+
+  removeFile(id: string){
+    if(id){
+      this.fileService.deleteFile(id).subscribe(res=>{
+        console.log(res);
+        this.screenControlService.currentFolderId.subscribe(folderId=>{
+          this.folderId.emit(folderId);
+        })
+      })
+    }
   }
 
 }

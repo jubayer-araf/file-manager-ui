@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { ScreenControlService } from '../services/screen-control.service';
 import { FormsModule } from '@angular/forms';
 import { FileService } from '../services/file.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-edit-file-modal',
@@ -17,19 +18,18 @@ export class EditFileModalComponent {
   }
   fileExt: string = "";
   fileId :any = "";
-  parentFolderid : string ="";
+  parentFolderid : string | null ="";
   isFile = true;
+  saveButtontitle = "Add New Folder";
 
   constructor(private screenControl: ScreenControlService, private fileService: FileService) { }
 
-  // openModal(){
-  //   var myModal = new bootstrap.Modal(document.getElementById("exampleModal"), {});
-  //   document.onreadystatechange = function () {
-  //     myModal.show();
-  //   };
-  // }
-
   ngOnInit(){
+
+    this.screenControl.currentFolderId.subscribe(folderid=>{
+      this.parentFolderid = folderid;
+    });
+
     this.screenControl.fileRename.subscribe(file => {
       this.fileId = file.id;
       this.fileModel.description = file.description;
@@ -38,12 +38,17 @@ export class EditFileModalComponent {
         this.isFile = false;
         this.fileModel.name = file.name;
         this.title = "Rename Folder";
-      }else{
+        this.saveButtontitle = "Save Changes"
+      } else if(file.folderId != null){
         this.parentFolderid = file.folderId;
         this.isFile = true;
         this.fileModel.name = this.seperateFilenameAndExt(file.name)[0];
         this.fileExt = "." + this.seperateFilenameAndExt(file.name)[1];
         this.title = "Rename File";
+        this.saveButtontitle = "Save Changes"
+      } else{
+        this.isFile = false;
+        this.title = "Add Folder";
       }
     });
   }
@@ -59,15 +64,20 @@ export class EditFileModalComponent {
       "description" : this.fileModel.description,
       "parentFolderId" : this.parentFolderid
     }
-
-    if(this.isFile){
-      this.fileService.upadateFile(this.fileId, folderReqModel).subscribe(res=>{
+    if(this.saveButtontitle == "Add New Folder"){
+      this.fileService.addFolder(folderReqModel).subscribe(res=>{
         console.log(res);
       })
     }else{
-      this.fileService.upadateFolder(this.fileId, folderReqModel).subscribe(res=>{
-        console.log(res);
-      })
+      if(this.isFile){
+        this.fileService.upadateFile(this.fileId, folderReqModel).subscribe(res=>{
+          console.log(res);
+        })
+      }else{
+        this.fileService.upadateFolder(this.fileId, folderReqModel).subscribe(res=>{
+          console.log(res);
+        })
+      }
     }
   }
 

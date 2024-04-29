@@ -5,12 +5,14 @@ import { MyFilesComponent } from './my-files/my-files.component';
 import { LoginComponent } from './login/login.component';
 import { SharedFilesComponent } from './shared-files/shared-files.component';
 import { UserSettingsComponent } from './user-settings/user-settings.component';
+import { TrashComponent } from './trash/trash.component';
 
 const routes: Routes = [
   { path: 'login', component:LoginComponent},
   { path: 'home', component: OverviewComponent},
   { path: "shared", component: SharedFilesComponent},
   { path: "settings", component:UserSettingsComponent},
+  { path: "trash", component: TrashComponent},
   { path: ':id', component: MyFilesComponent},
   { path: 'root', component: MyFilesComponent,
     children: [{

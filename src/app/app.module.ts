@@ -16,6 +16,7 @@ import { SharedFilesComponent } from './shared-files/shared-files.component';
 import { EditFileModalComponent } from './edit-file-modal/edit-file-modal.component';
 import { FormsModule } from '@angular/forms';
 import { UserSettingsComponent } from './user-settings/user-settings.component';
+import { TrashComponent } from './trash/trash.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { UserSettingsComponent } from './user-settings/user-settings.component';
     DetailsComponent,
     SharedFilesComponent,
     EditFileModalComponent,
-    UserSettingsComponent
+    UserSettingsComponent,
+    TrashComponent
   ],
   imports: [
     BrowserModule,

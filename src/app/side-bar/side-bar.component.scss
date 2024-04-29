@@ -69,12 +69,14 @@
     color: #899bbd;
   }
   
-  .sidebar-nav .nav-link:hover {
+  .sidebar-nav .nav-link:hover,
+  .sidebar-nav .nav-link.active {
     color: #0280ff;
     background: #ddebfa;
   }
   
-  .sidebar-nav .nav-link:hover i {
+  .sidebar-nav .nav-link:hover i,
+  .sidebar-nav .nav-link.active i  {
     color: #0280ff;
     background: #ddebfa;
   }

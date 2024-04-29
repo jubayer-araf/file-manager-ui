@@ -9,7 +9,15 @@
             <th scope="col">Modified Date</th>
             <th scope="col">File Size</th>
             <th scope="col" class="item-end">
-              <i class="bi bi-three-dots-vertical"></i>
+              <div class="dropdown show">
+                <a class="" href="javascript.void(0);" data-bs-toggle="dropdown">
+                  <i class="bi bi-three-dots-vertical"></i>
+                </a>
+                <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+                  <a class="dropdown-item" href="javascript:void(0)" data-bs-toggle="modal" data-bs-target="#exampleModal" (click)="addFolder()">Add New Folder</a>
+                </ul>
+
+              </div>
             </th>
           </tr>
         </thead>
@@ -18,7 +26,7 @@
             <td><i class="bi bi-folder icon-blue"></i></td>
             <td class="table-row" [routerLink]="['', folder.id]" (click)="folderSelect(folder.id)">{{folder.name}}</td>
             <td>{{folder.lastUpdatedByUserId}}</td>
-            <td>{{folder.updatedDate}}</td>
+            <td>{{folder.updatedDate | date: 'dd-MM-yyyy hh:mm a'}}</td>
             <td>{{folder.size}}</td>
             <td class="item-end">
               <div class="dropdown show">
@@ -29,6 +37,7 @@
                   <a class="dropdown-item" [routerLink]="['', folder.id]" (click)="folderSelect(folder.id)">Show information</a>
                   <a class="dropdown-item" href="javascript:void(0)" (click)="downlaodFolder(folder.id, folder.name)">Download</a>
                   <a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#exampleModal" (click)="renameFile(folder)">Edit</a>
+                  <a class="dropdown-item" href="javascript:void(0)" (click)="removeFolder(folder.id)">Remove?</a>
                 </ul>
 
               </div>
@@ -58,6 +67,7 @@
                   <a class="dropdown-item" (click)="fileSelect(fileItem.id)">Show information</a>
                   <a class="dropdown-item" href="javascript:void(0)" (click)="downlaodFile(fileItem.id, fileItem.name)">Download</a>
                   <a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#exampleModal" (click)="renameFile(fileItem)">Edit</a>
+                  <a class="dropdown-item" href="javascript:void(0)" (click)="removeFile(fileItem.id)">Remove?</a>
                 </ul>
 
               </div>

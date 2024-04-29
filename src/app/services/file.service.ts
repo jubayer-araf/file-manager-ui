@@ -35,6 +35,13 @@ export class FileService {
     return this.http.get<any[]>(`${this.baseUrl}/api/filedetails/shared` , { headers : header} );
   }
 
+  addFolder(folderReq : any): Observable<any[]> {
+
+    const header = this.getHeader();
+
+    return this.http.post<any[]>(`${this.baseUrl}/api/folder`, folderReq , { headers : header} );
+  }
+
   upadateFolder(folderId: string, folderReq : any): Observable<any[]> {
 
     const header = this.getHeader();
@@ -47,6 +54,43 @@ export class FileService {
     const header = this.getHeader();
 
     return this.http.put<any[]>(`${this.baseUrl}/api/filedetails/${fileId}`, fileReq , { headers : header} );
+  }
+
+  deleteFile(fileId: string): Observable<any[]> {
+
+    const header = this.getHeader();
+
+    return this.http.delete<any[]>(`${this.baseUrl}/api/filedetails/${fileId}` , { headers : header} );
+  }
+
+  deleteFolder(fileId: string): Observable<any[]> {
+
+    const header = this.getHeader();
+
+    return this.http.delete<any[]>(`${this.baseUrl}/api/folder/${fileId}` , { headers : header} );
+  }
+
+
+  getDeleted(): Observable<any[]> {
+
+
+    const header = this.getHeader();
+
+    return this.http.get<any[]>(`${this.baseUrl}/api/trashfile` , { headers : header} );
+  }
+
+  restoreFolder(folderId : string): Observable<any[]> {
+
+    const header = this.getHeader();
+
+    return this.http.get<any[]>(`${this.baseUrl}/api/trashfile/restorefolder/${folderId}` , { headers : header} );
+  }
+
+  restoreFile(folderId : string): Observable<any[]> {
+
+    const header = this.getHeader();
+
+    return this.http.get<any[]>(`${this.baseUrl}/api/trashfile/restorefile/${folderId}` , { headers : header} );
   }
 
 
